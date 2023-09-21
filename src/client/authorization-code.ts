@@ -85,12 +85,6 @@ export class OAuth2AuthorizationCodeClient {
       query.scope = params.scope.join(' ');
     }
 
-    const disallowed = Object.keys(query);
-
-    if (params?.extraParams && Object.keys(params.extraParams).filter((key) => disallowed.includes(key)).length > 0) {
-      throw new Error(`The following extraParams are disallowed: '${disallowed.join("', '")}'`);
-    }
-
     query = {...query, ...params?.extraParams};
 
 

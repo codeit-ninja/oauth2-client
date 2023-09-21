@@ -40,7 +40,7 @@ export type AuthorizationCodeRequest = {
  * for the authorization_code request.
  */
 export type AuthorizationQueryParams = {
-  response_type: 'code';
+  response_type: 'code'|'token';
   client_id: string;
   redirect_uri: string;
   state?: string;
